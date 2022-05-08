@@ -22,7 +22,7 @@ jobs:
       - name: List of all changed files
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file was changed" >> changed_files.log 2>&1
+            echo "$file was changed" >> list_of_changed_files.log 2>&1
             echo "Count Tab in files: `awk '{print gsub(/\t/,"")}' $file | awk '{s+=$1} END { print s }'`" >> list_of_changed_files.log 2>&1
           done
       - name: Upload report
